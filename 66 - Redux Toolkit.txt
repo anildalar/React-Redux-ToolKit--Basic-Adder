@@ -1,0 +1,55 @@
+66 - Redux Toolkit
+
+Redux Toolkit is package to write the redux logic in an organized/standard way
+
+
+https://redux.js.org/
+
+https://react-redux.js.org/
+
+https://redux-toolkit.js.org/
+
+
+Create a basic counter (add,reset,subtract) with help of RTK
+
+
+npm install @reduxjs/toolkit
+npm install react-redux
+
+
+What we have been doign previously to createStore object
+
+import { createStore } from 'react-redux';
+let store = createStore(p1,p2,p2);
+p1= reducerFunction
+p2 = initialState
+p3 = enchancerFunc i.e middlewares
+
+Now we are using RTK 
+
+import { configureStore } from 'react-redux';
+let store = configureStore({
+	//1.P:V
+	//2. Methods
+})
+
+only one JS object
+
+
+
+
+Lets create 2 pages navigate with react-router-dom
+page1 - add,reset,sub
+page2 - fullcalculator
+with RTK
+
+
+For Unit Testing
+
+
+something.spec.js
+something.test.js
+
+
+
+
