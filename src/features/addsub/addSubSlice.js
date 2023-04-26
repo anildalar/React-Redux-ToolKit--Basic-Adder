@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let initialState={
-    value:888
+    value:777
 }
 export const addSubSlice = createSlice({
     //p:V
@@ -11,15 +11,28 @@ export const addSubSlice = createSlice({
         //1 P:V P will be your actionsNames
 
         //2. Methods
-        addbyone:(state)=>{
-            console.log('inside addbyone method');
-            console.log('state---->',state);
+        increment:(state)=>{
+            console.log('inside increment method');
+            console.log('state---->',state.value);
+            state.value = state.value + 1
         },
-        'reset':{},
-        "subbyone":{},
+        decrement:(state)=>{
+            console.log('inside decrement method');
+            console.log('state---->',state);
+            state.value = state.value - 1 //Direct Mutation x1
+        },
+        reset:(state)=>{
+            console.log('inside reset method');
+            console.log('state---->',state);
+            state.value = 777
+          
+
+        },
     }
 });
 
+
+export const { increment, decrement, reset } = addSubSlice.actions;
 
 export const selectCount = (state) => {
     console.log('state--->',state);

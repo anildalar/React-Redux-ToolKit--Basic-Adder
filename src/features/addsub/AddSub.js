@@ -1,20 +1,20 @@
 //RFC
 
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { selectCount } from './addSubSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { decrement, increment, reset, selectCount } from './addSubSlice'
 
 export default function AddSub() {
-    //
-
+    //2.1 HOOKS AREA
     let state = useSelector(selectCount)
+    let dispatch = useDispatch()
     return (
         <>
             { console.log(state)}
             <h1>{state}</h1>
-            <button>+</button>
-            <button>Reset</button>
-            <button>-</button>
+            <button onClick={()=>{ dispatch(increment()) }}>+</button>
+            <button onClick={()=>{ dispatch(reset()) }}>Reset</button>
+            <button onClick={()=>{ dispatch(decrement()) }}>-</button>
         </>
     )
 }
